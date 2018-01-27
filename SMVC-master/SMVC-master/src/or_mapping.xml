@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OR-Mapping>
+   <jdbc>
+      <property>
+         <name>driver_class</name>
+         <value>org.postgresql.Driver</value>
+      </property>
+      <property>
+          <name>url_path</name>
+          <value>jdbc:postgresql://localhost/hello2</value>
+      </property>
+      <property>
+           <name>db_username</name>
+           <value>user01</value>
+      </property>
+      <property>
+           <name>db_userpassword</name>
+           <value>user01password</value>
+      </property>
+   </jdbc>
+   <class>
+      <name>MysqlHelper</name>
+      <table>MysqlHelper</table>
+      <id>
+          <name>ID</name>
+      </id>
+      <property>
+          <name>userPass</name>
+          <column>user_pass</column>
+          <type>String</type>
+          <lazy>true</lazy>
+      </property>
+   </class>
+</OR-Mapping>
