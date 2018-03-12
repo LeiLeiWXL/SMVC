@@ -13,7 +13,7 @@ package ustc.keene.mvc.viewer;
  *         负责定义每个ViewerComponent对象的accept行为和getHtml行为，为了构建Visitor模式&生成每个视图Html代码
  */
 public interface IViewerComponent {
-
+ 
 	public void accept(IViewerComponentVisitor vcv);
 
 	public String getHtml();

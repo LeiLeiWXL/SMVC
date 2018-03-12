@@ -1,14 +1,10 @@
 package ustc.keene.mvc.controller;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
+
+
 import java.util.HashMap;
 import ustc.keene.mvc.controller.interceptor.IInterceptor;
-import ustc.keene.mvc.dao.orm.ORMContext;
-import ustc.keene.mvc.dao.orm.ORMParser;
-import ustc.keene.mvc.dao.orm.ObjectContext;
-import ustc.keene.mvc.test.sqlite.MysqlHelper;
 import ustc.keene.mvc.tools.ExceptionThrower;
 import ustc.keene.mvc.tools.IConfigurationAdapter;
 import ustc.keene.mvc.tools.JSONConfigurationParser;
@@ -35,6 +31,8 @@ public class ControllerConfiguration {
 	private HashMap<String, IInterceptor> interceptorList;
 
 	private static ControllerConfiguration cc = null;
+	
+	static JSONConfigurationParser json=new JSONConfigurationParser();
 
 	private ControllerConfiguration() {
 		initConfigurationFile();
@@ -45,27 +43,7 @@ public class ControllerConfiguration {
 	 * 如无，将configurationFile赋值为“”
 	 */
 	private void initConfigurationFile() {
-		/**
-		 * 数据库测试部分
-		 */		
-		System.out.println("访问");
-		MysqlHelper my=new MysqlHelper();
-		my.id=3;
-		try {
-			my.Query(my);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		ObjectContext oc=new ObjectContext();
-		try {
-			oc.getObjectContext(my);
-		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	
 		String path = ControllerConfiguration.class.getResource("/").getPath();
 		configurationFile = path + "controller.xml";
 		File f = new File(configurationFile);

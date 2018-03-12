@@ -1,12 +1,11 @@
 package ustc.keene.mvc.test;
 
-import java.sql.SQLException;
+
 import java.util.HashMap;
 
 import ustc.keene.mvc.controller.ControllerConfiguration;
 import ustc.keene.mvc.controller.PageControllerDescriptor;
 import ustc.keene.mvc.controller.interceptor.IInterceptor;
-import ustc.keene.mvc.test.sqlite.SQLiteHelper;
 
 /**
  * @author keene zhu

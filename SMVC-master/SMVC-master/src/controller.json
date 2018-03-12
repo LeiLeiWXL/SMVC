@@ -1,16 +1,10 @@
-{  
-    "type": "FeatureCollection",  
-    "features": [{  
-        "type": "Feature",  
-        "properties": {  
-            "name": "Yuen Long",  
-            "ID_0": 102,  
-            "ID_1": 18,  
-            "ISO": "HKG"  
-        },  
-        "geometry": {  
-            "type": "Polygon",  
-            "coordinates": [[[114.084511, 22.519991], [114.075668, 22.517466], [114.078194, 22.516203], [114.079460, 22.516623], [114.082825, 22.519150], [114.084511, 22.519991]]]  
-        }  
-    }]  
-} 
+[{"interceptor":[{"name":"intes1","Class":"ustc.keene.mvc.test.login.InterceptorTest"},
+{"name":"intes2","Class":"ustc.keene.mvc.test.login.InterceptorTest"}],
+"page_controller":[{"name":"login","Class":"ustc.keene.mvc.test.login.LoginPageController","method":"login",
+"name1":"register","Class1":"ustc.keene.mvc.test.login.LoginPageController",
+"result":[{"name":"success","Type":"forward","target":"pages/success_login.html",
+"name1":"failure","target1":"pages/register.html","Type1":"redirect"},
+{"name":"failure","target":"pages/register.html"}]},
+{"name":"register","interceptor_ref":[{"name":"intes1"},
+{"name":"intes2"}],"result":[{"target":"pages/success_register.html"},
+{"name":"failure","target":"pages/failure_register.html"}]}]}]
